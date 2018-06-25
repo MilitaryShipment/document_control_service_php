@@ -125,15 +125,12 @@ class OaResend{
             "send_from"=>self::FROM,
             "fromName"=>self::FROM,
             "replyTo"=>self::FROM,
-            "cc"=>array(),
-            "bcc"=>array(),
             "subject"=>$this->template->msg_subject,
             "body"=>$this->template->msg_body,
             "attachments"=>array($this->file),
         );
         try{
             $this->sentMsg = $this->api->sendMessage($msg);
-            die(print_r($this->sentMsg));
         }catch(Exception $e){
             throw new Exception($e->getMessage());
         }
