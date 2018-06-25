@@ -1,0 +1,47 @@
+<blockquote>
+    Date: {{missing.now | date:'mediumDate'}}<br>
+    Time: {{missing.now | date:'shortTime'}}<br>
+    <center>PAPERWORK REQUEST {{missing.requestG11}}</center>
+    <br>
+    TO: {{missing.requestAgentId}} {{missing.requestAgentName}}<br>
+    FROM: DOCUMENT CONTROL DEPT / ALL-AMERICAN MOVING GROUP<br>
+    <br>
+    <strong>
+        GBL NUMBER: {{missing.requestGbl}}<br>
+        <br>
+        ORDER NUMBER: {{missing.requestOrderNumber}}<br>
+        <br>
+        CUSTOMER: {{missing.requestMemberName}}<br>
+    </strong>
+    <center><font color=red>*** ACTION REQUIRED ***</font></center>
+    Dear Agent:<br>
+    <br>
+    We are in need of the above documents. Please Email or Fax them.
+    <br>
+    <strong ng-repeat="i in missing.requestMissingItems">{{i}}<br></strong>
+    Please forward these documents to DocumentControl@AllAmericanMoving.com or fax to 901-202-3271.
+    <br>
+    Let us know if anyone needs to be added or deleted from these requests.
+    <br><br>
+    Memphis, TN 38167<br>
+    <br>
+    Thank you,<br>
+    <br>
+    Document Control<br>
+    <br>
+    ALL-AMERICAN MOVING GROUP<br>
+    Document Control Dept<br>
+    901-353-3900 (voice)<br>
+    901-202-3271 (fax)<br>
+</blockquote>
+<center>
+    <table>
+        <tr>
+            <td><b>Please send us paperwork within 7 days of the pickup date</b></td>
+        </tr>
+        <tr>
+            <td><b>Outlook will not download attached files larger than 15 MB.</b></td>
+        </tr>
+    </table>
+</center>
+<br>
