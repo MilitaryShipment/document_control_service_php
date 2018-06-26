@@ -9,8 +9,6 @@ require_once __DIR__ . '/combinePpwk.php';
 
 class MissingItemsMonitor{
 
-    const REMOTESRV = 'http://10.25.33.146/combineOaPaperWork.php?gbl_dps=';
-
     private $debug;
 
     public function __construct($debug = true)
@@ -93,7 +91,11 @@ class MissingItemsMonitor{
         return $str;
     }
     private function _combinePaperwork($gbl){
-        $combine = new CombinePpwk($gbl);
+        try{
+            $combine = new CombinePpwk($gbl);
+        }catch(\Exception $e){
+            return false;
+        }
         return true;
     }
 }
