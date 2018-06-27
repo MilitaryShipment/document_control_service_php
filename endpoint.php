@@ -4,7 +4,8 @@ require_once __DIR__ . '/api.php';
 require_once __DIR__ . '/processes/sendOaPaperWork.php';
 require_once __DIR__ . '/processes/verifyPaperWork.php';
 require_once __DIR__ . '/processes/combinePpwk.php';
-
+require_once __DIR__ . '/processes/scannerFiles.php';
+require_once __DIR__ . '/processes/scannerXfer.php';
 
 class EndPoint extends API{
 
