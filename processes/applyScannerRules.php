@@ -30,16 +30,16 @@ class ApplyScannerRules{
         }
     }
     private function _findRules(){
-        $results = $GLOBALS['db']
-			->suite(self::MSSQL)
+$results = $GLOBALS['db']
+            ->suite(self::MSSQL)
             ->driver(self::MSSQL)
             ->database(self::SANDBOX)
             ->table(self::RULES)
             ->select("id")
             ->where("form_name","like","%" . $this->form_name . "%")
-//            ->where("gbl_dps like '%" . $this->gbl_dps . "%' or form_name like '%" . $this->form_name . "%'")
-            ->andWhere("expiration_date > cast(getdate() as date)")
-            ->andWhere("status_id = 1")
+            ->orWhere("gbl_dps","like","%" . $this->gbl_dps . "%")
+            ->andWhere("expiration_date",">","cast(getdate() as date)")
+            ->andWhere("status_id","=",1);
             ->get();
         if(!mssql_num_rows($results)){
             $this->noRules = true;
