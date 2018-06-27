@@ -39,7 +39,7 @@ $results = $GLOBALS['db']
             ->where("form_name","like","%" . $this->form_name . "%")
             ->orWhere("gbl_dps","like","%" . $this->gbl_dps . "%")
             ->andWhere("expiration_date",">","cast(getdate() as date)")
-            ->andWhere("status_id","=",1);
+            ->andWhere("status_id","=",1)
             ->get();
         if(!mssql_num_rows($results)){
             $this->noRules = true;
